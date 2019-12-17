@@ -2,7 +2,7 @@
 
 ## Thread Safety
 
-Thread1 / Thread2 DeadLock 방지
+Thread간의 DeadLock 방지
 
 [응용프로그램단]
 
@@ -66,7 +66,7 @@ finally
 }
 ```
 
-**Lock과 같이 특정코드블록(Critical Section)을 배타적으로 Lock**
+***Lock과 같이 특정코드블록(Critical Section)을 배타적으로 Lock***
 
 ## Task
 
@@ -90,11 +90,12 @@ Task.Factory.StartNew(Process01, 20);
 Task.Factory.StartNew(new Action(Process02));
 ```
 
-// 쓰레드 하나씩 생성할땐
+### 쓰레드 하나씩 생성할땐
+
+```C#
 // Thread t1 = new Thread(Process02);
 // Task.Factory 사용 시 스레드를 생성하고 동시에 시작하는 방식
 // but, 하나씩 개체를 만들어서 사용할 경우는 아래처럼
-```C#
 Task t1 = new Task(new Action(Process02));
 t1.Start();
 t1.Wait(); // Thread 에서 Join() 메서드와 동일`
