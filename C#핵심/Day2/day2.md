@@ -28,6 +28,7 @@ lock / monitor(개체 단위로 하는 동기화)
 static object lockobj = new object();
 .
 .
+.
 lock (lockobj)
 {
     counter++;
@@ -74,7 +75,7 @@ finally
 
 ### Task 실습
 
-C# 4.0 이상부터 사용 가능
+*C# 4.0 이상부터 사용 가능*
 Task 클래스는 TPL(PPL) 병렬 프로그램 : Task Paralle Library
 ThreadPool 사용
 
@@ -101,7 +102,7 @@ t1.Start();
 t1.Wait(); // Thread 에서 Join() 메서드와 동일`
 ```
 
-// Lambda Express
+Lambda Express
 
 ```C#
 Task t2 = new Task(() =>
@@ -126,6 +127,7 @@ Console.WriteLine($"현재 입력한 글자 수 : {result}");
 ## 병렬프로그래밍
 
 포트란에선 PPL
+
 C#에선 TPL
 
 ```C#
